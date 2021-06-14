@@ -1,0 +1,22 @@
+#_title{
+    font-size: 45px;
+    color: orangered;
+}
+#login_title{
+    color: blue;
+    font-size: 20px;
+}
+#forgotpassword{
+    background-color:orangered ;
+    color: white;
+    border-radius: 30px;
+}
+#newuser{
+    background-color:deepskyblue ;
+    color: white;
+    border-radius: 30px;
+}
+#register{
+    background-color: blue;
+    color: white;
+}
