@@ -1,0 +1,79 @@
+<!--User Login Page in Html-->
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>User Register</title>
+  </head>
+  <style>
+   #content{
+    margin: auto;
+   }
+    fieldset{
+     background-color: linen;
+     width: 70%;
+     text-align: center;
+    }
+    legend{
+     background-color: lightseagreen;
+     font-size: 30px;
+     color: rgb(119, 3, 3);
+     border: 2px solid rgb(0, 81, 255);
+     padding: 3px;
+    }
+    label{
+     font-size: 20px;
+    }
+    input{
+     height: 20px;
+     padding: 5px;
+     margin: 15px;
+     border: none;
+    }
+    button{
+     width: 100px;
+     height: 30px;
+     background-color: peru;
+     color: seashell;
+     font-weight: bolder;
+        border: none;
+    }
+  </style>
+  <body bgcolor="lightblue">
+    <h1>User Login Page in HTML</h1>
+    <hr/>
+    <form action="{% url 'main' %}" method="post">
+    {% csrf_token %}
+      <fieldset id="content">
+       <legend>Register Page</legend>
+       <br><br>
+
+       <label for="fname">First Name:</label>
+       <input type="text" id="fname" placeholder="First Name" name="fname">
+       <label for="lname">Last Name:</label>
+       <input type="text" id="lname" placeholder="Last Name" name="lname">
+       <br><br>
+
+       <label for="uname">User Name:</label>
+       <input type="text" id="uname" placeholder="User Name" name="uname">
+       <br><br>
+
+       <label for="pwd">Password:</label>
+       <input type="password" id="pwd" placeholder="Password" name="pas" >
+       <br><br>
+
+       <label for="rpwd">Retype-Password:</label>
+       <input type="password" id="rpwd" placeholder="Retype-Password" name="rpas">
+       <br><br>
+
+       <label for="age">Age:</label>
+       <input id="age" type="number" min="18" max="35" placeholder="Age" name="age">
+       <br><br>
+
+       <button type="submit">Register</button>
+          {% if message %}
+              <h4>{{ message }}</h4>
+          {% endif %}
+      </fieldset>
+    </form>
+  </body>
+</html>

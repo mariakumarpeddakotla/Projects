@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+     #box{
+      text-align: center;
+      margin: auto;
+     }
+      fieldset{
+       background-color:khaki ;
+       width: 50%;
+      }
+      legend{
+       background-color:lightblue ;
+       font-size: 25px;
+       border: 2px solid blue;
+       padding: 3px;
+      }
+      input{
+       height: 27px;
+       width: 250px;
+       border: none;
+       margin-left: 3px;
+      }
+      button{
+       background-color: coral;
+       color: cornsilk;
+       width: 70px;
+       height: 30px;
+       font-weight: bolder;
+       border: none;
+      }
+    </style>
+</head>
+<body bgcolor="lightgreen">
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+        <fieldset id="box">
+            <legend>Login Page</legend>
+            <br><br>
+
+            User Name:<input type="text" placeholder="Username" name="username">
+            <br><br>
+            Password:<input type="password" placeholder="Password" name="password">
+            <br><br>
+            <button type="submit">Login</button>
+            {% if message %}
+                <h4>{{ message }}</h4>
+            {% endif %}
+        </fieldset>
+    </form>
+</body>
+</html>

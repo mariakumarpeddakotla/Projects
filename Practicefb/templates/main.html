@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Facebook-login or signup</title>
+      <link rel="stylesheet" href="{% static 'css/mystyle.css' %}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form action="{% url 'forgot' %}" method="post">
+        {% csrf_token %}
+      <table align="center">
+        <tr>
+          <th><h3 id="head">facebook</h3></th>
+        </tr>
+        <tr>
+          <th><input type="tel" placeholder="Mobile number or email"></th>
+        </tr>
+        <tr>
+          <th><input type="password" placeholder="Password"></th>
+        </tr>
+        <tr>
+          <th><button type="submit" id="button1">Login</button></th>
+        </tr>
+        <tr>
+          <th><a href="{% url 'forgot' %}" id="text">Forgot your password?</a></th>
+        </tr>
+        <tr>
+          <th>or<hr/></th>
+        </tr>
+        <tr>
+          <th><button type="submit" id="button2">Create a new account</button></th>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

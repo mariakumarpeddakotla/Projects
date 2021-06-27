@@ -1,0 +1,23 @@
+thead{
+    background-color: burlywood;
+}
+tbody{
+    background-color: cadetblue;
+}
+.btn{
+    background-color: burlywood;
+}
+
+.inp{
+    background-color: lightgrey;
+}
+
+.lgin{
+    background-color: lightgrey;
+}
+.loginpage{
+    background-color: burlywood;
+    width: 98%;
+    padding: 3px;
+    margin-left: 10px;
+}

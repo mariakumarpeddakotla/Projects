@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>New account</title>
+  <link rel="stylesheet" href="{% static 'css/mystyle1.css' %}">
+  <style>
+   #table2{
+     background-color: rgb(235, 232, 232);
+     height: 500px;
+   }
+   #input1{
+      margin-left: ;
+   }
+   #up{
+     background-color: green;
+     color: white;
+     width: 100px;
+   }
+  </style>
+ </head>
+ <body>
+  <form action="{% url 'main' %}" method="post">
+   <table align="center" border="0">
+    <tr>
+     <td id="header">facebook
+     <button id="button1">Log in to exsiting Account</button>
+    </td>
+    </tr>
+    <tr>
+     <th>
+      <table border="0" id="table2" style="margin-top: -2px; ;">
+        <tr>
+          <th colspan="2" style="font-size: 40px;">Create a new account</th>
+        </tr>
+        <tr>
+         <th>it's quick and easy.</th>
+        </tr>
+        <tr>
+         <th>
+           <input type="text" placeholder="First name">
+           <input type="text" placeholder="Surname" id="input1">
+          </th>
+        </tr>
+        <tr>
+         <th><input type="tel" placeholder="Mobile number or email address" id="input1"></th>
+        </tr>
+        <tr>
+         <th><input type="password" placeholder="New password"></th>
+        </tr>
+        <tr>
+         <th>Date of birth</th>
+        </tr>
+        <tr>
+         <th><input type="date"></th>
+        </tr>
+        <tr>
+         <th>Gender</th>
+        </tr>
+        <tr>
+           <td>
+             <input type="radio">Female
+             <input type="radio">Male
+             <input type="radio">Custom
+          </td>
+         </th>
+        </tr>
+        <tr>
+         <td align="center">By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</td>
+        </th>
+        <tr>
+         <th><button type="submit" id="up">Sign Up</button></th>
+        </tr>
+     </table>
+    </th>
+    </tr>
+   </table>
+  </form>
+ </body>
+</html>

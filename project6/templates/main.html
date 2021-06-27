@@ -1,0 +1,40 @@
+<html>
+<body>
+<table align="center" border="0px" width="50%">
+    <tr>
+        <th rowspan="2">idno</th>
+        <th rowspan="2">name</th>
+        <th colspan="6">marks</th>
+    </tr>
+    <tr>
+        <th>Subject1</th>
+        <th>Subject2</th>
+        <th>Subject3</th>
+        <th>Subject4</th>
+        <th>Subject5</th>
+        <th>Subject6</th>
+    </tr>
+    <tr>
+        {% for record in data %}
+            <tr>
+                <td>{{record.idno}}</td>
+                <td>{{record.name}}</td>
+
+                    {% for subject in record.marks %}
+                        {% if subject < 35 %}
+                            <td style="background-color: red;color: white">{{subject}}</td>
+                        {% elif subject == 'A' %}
+                            <td style="background-color: yellow;">{{subject}}</td>
+                        {% else %}
+                            <td style="background-color: green;color: white">{{subject}}</td>
+                        {% endif %}
+
+                    {% endfor %}
+
+            </tr>
+        {% endfor %}
+    </tr>
+
+</table>
+</body>
+</html>

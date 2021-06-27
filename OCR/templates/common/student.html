@@ -1,0 +1,58 @@
+{% extends 'common/common.html'%}
+
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <form action="{% url 'std_register' %}" method="post">
+              {% csrf_token %}
+            <div>
+                <h4 style="text-align: center">Registration</h4>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Student_Name:</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Name" name="std_name">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Student_Contact:</span>
+              <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Contact" name="std_cnt">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Student_Email</span>
+              <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email" name="std_email">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Student_Password:</span>
+              <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password" name="std_pswd">
+            </div>
+            <button type="submit" class="btn btn-outline-primary" style="margin-left: 50%">Register</button>
+          </form>
+        </div>
+        <div class="col">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>
+                    <h4 style="text-align: center;margin-top: 5%">Login</h4>
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
+                  <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email" name="std_email">
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default">Password:</span>
+                  <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Contact" name="std_pswd">
+                </div>
+                <button type="submit" class="btn btn-outline-primary" style="margin-left: 50%">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block foot %}
+    {% include 'common/foot.html' %}
+{% endblock %}

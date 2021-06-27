@@ -1,0 +1,35 @@
+S{% extends 'common.html' %}
+
+{% block menu %}
+    {% include 'main_menu.html' %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="loginpage"><h1>Login Page</h1></div>
+        <div style="padding: 10px">
+            <input type="email" class="form-control lgin" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Email" name="email">
+        </div>
+        <div style="padding: 10px">
+            <input type="password" class="form-control lgin" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Password" name="password">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-secondary">Login</button>
+        </div>
+    </div>
+        {% if error_message %}
+            <div style="padding: 10px">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong> {{ error_message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        {% endif %}
+    </form>
+
+{% endblock %}

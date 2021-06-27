@@ -1,0 +1,51 @@
+<html>
+<head>
+    <style>
+        th{
+            background-color: darkkhaki;
+        }
+        td{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+<table align="center" border="2">
+    <caption style="font-size: 30px">Student Details</caption>
+    <tr>
+        <th rowspan="2">Idno</th>
+        <th rowspan="2">Name</th>
+        <th rowspan="2">Class</th>
+        <th colspan="8">Marks</th>
+    </tr>
+    <tr>
+                <th>subject1</th>
+                <th>subject2</th>
+                <th>subject3</th>
+                <th>subject4</th>
+                <th>subject5</th>
+                <th>subject6</th>
+                <th>subject7</th>
+                <th>subject8</th>
+            </tr>
+    <tr>
+        {% for info in details %}
+            <tr>
+                <td>{{info.student_id}}</td>
+                <td>{{info.name}}</td>
+                <td>{{info.class}}</td>
+                {% for sub in info.marks %}
+                {% if sub > 35 %}
+                    <td style="background-color: green;color: white">{{sub}}</td>
+                {% elif sub == 'A' %}
+                    <td style="background-color: lightskyblue;color: white">{{sub}}</td>
+                {% else %}
+                    <td style="background-color: red;color: white">{{sub}}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>

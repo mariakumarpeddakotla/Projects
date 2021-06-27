@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+<head>
+    <title>Practice</title>
+    <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+</head>
+<body>
+<form method="post" action="/register/">
+    {% csrf_token %}
+    <input type="text" placeholder="Firstname" autofocus name="fname">
+    <br><br>
+    <input type="text" placeholder="Lastname" name="lname">
+    <br><br>
+    <input type="number" placeholder="phno" name="num">
+    <br><br>
+    <input type="email" placeholder="email" name="mail">
+    <br><br>
+    <select name="op">
+        <option>Btech</option>
+        <option>Mtech</option>
+        <option>MBA</option>
+    </select>
+    <br><br>
+    Gender:<br><br>
+    <input type="radio" name="gen">Male
+    <input type="radio" name="gen">Female
+    <br><br>
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>
